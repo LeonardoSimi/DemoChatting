@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import './screens/chat_screen.dart';
+import './screens/auth_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -13,8 +18,25 @@ class MyApp extends StatelessWidget {
       title: 'DemoChatting',
       theme: ThemeData(
         primarySwatch: Colors.pink,
+        backgroundColor: Colors.pink,
+        accentColor: Colors.deepPurple,
+        accentColorBrightness: Brightness.dark,
+        buttonTheme: ButtonTheme.of(context).copyWith(
+          buttonColor: Colors.pink,
+          textTheme: ButtonTextTheme.primary,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        )
       ),
-      home: ChatScreen(),
+      home: StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(), builder: (ctx, userSnapshot) {
+        if (userSnapshot.hasData){
+          return ChatScreen();
+        }
+        else{
+          return AuthScreen();
+        }
+      })
     );
   }
 }
+
+//DA VEDERE 14-19
