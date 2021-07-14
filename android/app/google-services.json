@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "833522929114",
+    "project_id": "demochatting-3e720",
+    "storage_bucket": "demochatting-3e720.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833522929114:android:0a6421f066fd8dfea584e3",
+        "android_client_info": {
+          "package_name": "com.example.demochatting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833522929114-qs37s2tn8132movsd9rkebjik09kpkt0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3wOLYeo2uCRrCmVMKNkWzHwWZOqAsiRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833522929114-qs37s2tn8132movsd9rkebjik09kpkt0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
